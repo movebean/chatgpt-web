@@ -86,4 +86,5 @@ app.use('', router)
 app.use('/api', router)
 app.set('trust proxy', 1)
 
-app.listen(3002, () => globalThis.console.log('Server is running on port 3002'))
+const LISTEN_PORT = process.env.LISTEN_PORT ?? 3002
+app.listen(LISTEN_PORT, () => globalThis.console.log(`Server is running on port ${LISTEN_PORT}`))
